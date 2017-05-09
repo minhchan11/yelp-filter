@@ -10,9 +10,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Texter.Models;
+using YelpMvp.Models;
 
-namespace Texter
+namespace YelpMvp
 {
     public class Startup
     {
@@ -28,9 +28,9 @@ namespace Texter
         {
             services.AddMvc();
             services.AddEntityFramework()
-                .AddDbContext<TexterContext>(options =>
+                .AddDbContext<YelpMvpContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])); services.AddEntityFramework()
-                 .AddDbContext<TexterContext>(options =>
+                 .AddDbContext<YelpMvpContext>(options =>
                      options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
