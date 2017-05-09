@@ -1,4 +1,4 @@
-﻿﻿ {
+﻿{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.1",
@@ -63,4 +63,4 @@
   "scripts": {
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
-} }
+} 
