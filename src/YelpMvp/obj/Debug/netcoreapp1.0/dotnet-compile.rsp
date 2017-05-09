@@ -206,9 +206,12 @@
 --resource:"C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\obj\Debug\netcoreapp1.0\YelpMvpdotnet-compile.deps.json",YelpMvp.deps.json
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Program.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Startup.cs
+C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Controllers\CuisinesController.cs
+C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Controllers\HomeController.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Migrations\20170509173808_Initial.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Migrations\20170509173808_Initial.Designer.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Migrations\YelpMvpContextModelSnapshot.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Models\Cuisine.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Models\Location.cs
+C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Models\Restaurant.cs
 C:\Users\epicodus\Desktop\YelpMvp\src\YelpMvp\Models\YelpMvpContext.cs

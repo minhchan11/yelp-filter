@@ -17,6 +17,7 @@ namespace YelpMvp.Controllers
         public IActionResult GetRestaurants()
         {
             var allRestaurants = Restaurant.GetRestaurants();
+
             return View(allRestaurants);
         }
     }

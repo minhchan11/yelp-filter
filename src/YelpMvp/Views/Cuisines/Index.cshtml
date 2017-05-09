@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<YelpMvp.Models.Cuisine>
+
+<h2>Cuisines</h2>
+<h4>@Html.DisplayNameFor(model => model.Name)</h4>
+<ul>
+    @foreach (var listCuisine in Model)
+    {
+        <li>
+            @Html.DisplayFor(modelItem => listCuisine.Name)
+    </li>
+
+    }
+</ul>
+
+<p>@Html.ActionLink("Add a new cuisine", "AddCuisine")</p>
