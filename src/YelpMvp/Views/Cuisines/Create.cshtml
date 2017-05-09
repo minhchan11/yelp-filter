@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model YelpMvp.Models.Cuisine
+
+<h2>Create</h2>
+<hr />
+<h4>Add a new cuisine</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    <input type="submit" value="Add New"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
