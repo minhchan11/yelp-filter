@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model IEnumerable<YelpMvp.Models.Location>
+
+<h2>Locations</h2>
+@foreach(var location in Model)
+{
+    <h4>@Html.DisplayFor(modelLocation => location.City), @Html.DisplayFor(modelLocation => location.State)</h4>
+}
+
+
+<p>@Html.ActionLink("Add a new location", "Create")</p>

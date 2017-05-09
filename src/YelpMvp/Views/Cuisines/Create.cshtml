@@ -4,6 +4,36 @@
 @{
 }
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '@Url.Action("Create","Locations")',
+            success: function (result) {
+                $('#createLocationPartial').html(result);
+                $('#new-location').submit(function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        url: '@Url.Action("Create", "Locations")', 
+                        type: 'POST',
+                        dataType: 'json',
+                        data: $(this).serialize(),
+                        success: function (result) {
+                            var resultMessage = 'You\'ve added a new location!<br>' + result.city + ', ' + result.state;
+                            $('#create-location-result');
+                        }
+
+                    })
+
+                })
+            }
+        });
+        
+    });
+</script>
+
 @model YelpMvp.Models.Cuisine
 
 <h2>Create</h2>
@@ -17,4 +47,6 @@
     <input type="submit" value="Add New"/>
 }
 
+
+<div id="createLocationPartial"></div>
 <p>@Html.ActionLink("Back to list", "Index")</p>

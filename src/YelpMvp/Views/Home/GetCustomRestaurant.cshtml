@@ -1,0 +1,15 @@
+﻿@model IEnumerable<YelpMvp.Models.Restaurant>
+<h2>All Restaurants</h2>
+<hr />
+<ol>
+    @foreach (var restaurant in Model)
+    {
+        <li>
+            <ul>
+                <li>Restaurant Name: @Html.DisplayFor(modelItem => restaurant.Name)</li>
+                <li>Ratings: @Html.DisplayFor(modelItem => restaurant.Rating)</li>
+            </ul>
+        </li>
+
+    }
+</ol>

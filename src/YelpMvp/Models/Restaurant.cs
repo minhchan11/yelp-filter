@@ -70,7 +70,23 @@ namespace YelpMvp.Models
             var restaurantList = JsonConvert.DeserializeObject<List<Restaurant>>(jsonResponse["businesses"].ToString());
             return restaurantList;
         }
-
+        public static List<Restaurant> GetCustomRestaurants(string cuisine, string location)
+        {
+            var client = new RestClient("http://api.yelp.com/v3");
+            var request = new RestRequest("/businesses/search", Method.GET);
+            request.AddParameter("term", cuisine);
+            request.AddParameter("location", location);
+            request.AddParameter("Authorization", "Bearer Ao9wyNEJi_JdysZZ2BQGr0sG2CgKnj1Pe3QEEjbSa6__mbKWQYitQne4wAJAmWamYagq7-P-4iZb4mzAH6ZIs_bjomtWwuU4XeFck6RhJmuQihOFdWMZqGIWhAUSWXYx", ParameterType.HttpHeader);
+            var response = new RestResponse();
+            Task.Run(async () =>
+            {
+                response = await GetResponseContentAsync(client, request) as RestResponse;
+            }).Wait();
+            Console.WriteLine(response);
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            var restaurantList = JsonConvert.DeserializeObject<List<Restaurant>>(jsonResponse["businesses"].ToString());
+            return restaurantList;
+        }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {

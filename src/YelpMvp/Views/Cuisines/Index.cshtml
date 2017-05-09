@@ -3,6 +3,22 @@
 *@
 @{
 }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '@Url.Action("Index","Locations")',
+            success: function (result) {
+
+                $('#locationPartial').html(result);
+
+            }
+        });
+    });
+</script>
+
 
 @model IEnumerable<YelpMvp.Models.Cuisine>
 
@@ -17,5 +33,6 @@
 
     }
 </ul>
-
+<div id="create-location-result"></div>
+<div id="locationPartial"></div>
 <p>@Html.ActionLink("Add a new cuisine", "Create")</p>

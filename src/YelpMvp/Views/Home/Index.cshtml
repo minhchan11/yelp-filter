@@ -3,6 +3,17 @@
 *@
 @{
 }
+
+<h2>Filter your search</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.DropDownList("Name", (IEnumerable<SelectListItem>)ViewBag.Cuisine, "Select ...")
+    @Html.DropDownList("Location")
+
+    <input type="submit" value="Search" />
+}
+
 <h2>Awesome Restaurant Search App!</h2>
 <hr />
 @Html.ActionLink("View all restaurants", "GetRestaurants")
